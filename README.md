@@ -44,6 +44,14 @@ touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
 
 These commands above help to create a new superuser account and set up the SSH keys accordingly.
 
+### Flush DNS cache
+
+```bash
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+```
+
+Flushes the DNS cache on Mac.
+
 ## Databases
 
 ### Vacuum PostgreSQL database
