@@ -70,6 +70,12 @@ sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
 
 Links the certificate in `sites-available` to `sites-enabled`.
 
+### Manual Renewal of Certificates
+
+```bash
+sudo certbot certonly --manual -d example.com --preferred-challenges dns
+```
+
 ## Databases
 
 ### Vacuum PostgreSQL database
