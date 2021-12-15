@@ -52,6 +52,24 @@ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 
 Flushes the DNS cache on Mac.
 
+## Certbot and NGINX
+
+### Create a certificate without affecting NGINX
+
+```bash
+sudo certbot certonly -d example.com --nginx
+```
+
+Creates a certificate but doesn't touch the NGINX default configuration.
+
+### Link NGINX `sites-enabled`
+
+```bash
+sudo ln -s /etc/nginx/sites-available/example.com /etc/nginx/sites-enabled/
+```
+
+Links the certificate in `sites-available` to `sites-enabled`.
+
 ## Databases
 
 ### Vacuum PostgreSQL database
