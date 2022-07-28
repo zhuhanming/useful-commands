@@ -124,3 +124,9 @@ gs -o output.png -sDEVICE=png256 -dLastPage=1 -r300 -dBackgroundColor=16#ffffff 
 ```
 
 Uses [Ghostscript](https://www.ghostscript.com) to get an image of the first page of `input.pdf`. The background colour is filled with white.
+
+### Replace word in file names recursively
+
+```bash
+find . -name "*sql.xz" -exec bash -c ' mv $0 ${0/beyond-server/sparks}' {} \;
+```
