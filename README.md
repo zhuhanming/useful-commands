@@ -105,6 +105,16 @@ npx yarn-audit-fix
 
 Will install [yarn-audit-fix](https://www.npmjs.com/package/yarn-audit-fix) and run it to fix vulnerabilities detected in the dependencies. Used for yarn projects.
 
+## Poetry
+
+### List outdated top-level dependencies
+
+```bash
+poetry show --outdated | grep --file=<(poetry show --tree | grep '^\w' | cut -d' ' -f1 | sed 's/.*/^&\\s/')
+```
+
+Credit goes to @Hultner [(see his comment here)](https://github.com/python-poetry/poetry/issues/2684#issuecomment-1076560832).
+
 ## Swift & XCode
 
 ### Clean pods and caches
